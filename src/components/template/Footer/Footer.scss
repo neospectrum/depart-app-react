@@ -1,0 +1,10 @@
+@import '../../../config/config.scss';
+
+.footer {
+    position: absolute;
+    width: 100%;
+    min-height: 390px;
+    background-color: $dark-gray;
+    bottom: 0;
+    position: relative;
+}
