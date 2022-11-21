@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../react-redux-toolkit"
+		},
+		{
+			"path": "../../../practice-react"
+		},
+		{
+			"path": "../../../../JavaScript/kanban-board-fullstack-main"
+		},
+		{
+			"path": "../../../../JavaScript/dumps-view-main"
+		}
+	],
+	"settings": {}
+}

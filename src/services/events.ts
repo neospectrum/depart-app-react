@@ -12,9 +12,17 @@ export const eventsApi = serverApi.injectEndpoints({
             }),
             providesTags: result => ['Events']
         }),
+        fetchOneEvent: build.query<IEvent, number>({
+            query: (id) => ({
+                url: `/event?id=${id}`,  
+            }),
+            providesTags: result => ['Events']
+        }),
     })
 });
 
 export const {
-    useFetchAllEventsQuery
+    useFetchAllEventsQuery,
+    useFetchOneEventQuery,
+    useLazyFetchOneEventQuery
 } = eventsApi;

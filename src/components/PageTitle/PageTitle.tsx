@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react';
 import './PageTitle.scss';
 
 interface PageTitleProps {
-    children: ReactNode
+    children?: ReactNode
 };
 
 export const PageTitle: FC<PageTitleProps> = ({ children }) => {

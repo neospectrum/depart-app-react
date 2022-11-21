@@ -10,9 +10,9 @@
 }
 .person {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+
+    justify-content: center;
+    gap: 150px;
 		&__image {
             max-width: 305px;
             max-height: 423px;
@@ -28,7 +28,7 @@
             align-self: center;
             display: flex;
             flex-flow: column;
-            gap: 40px;
+            gap: 2vh;
         }
 		&__name {
             white-space: normal;
@@ -44,6 +44,7 @@
             display: flex;
             flex-flow: column;
             align-items: center;
+            gap: 20px;
         }
     }
 }
@@ -57,15 +58,8 @@
         }
 		&__text {
             text-align: start;
-            font-size: 1.75rem;
-            line-height: 160%;
         }
         &__text > :not(:last-child) {
             margin: 0 0 55px 0;
         }
-    @media (max-width: 767px) {
-        &__text {
-            font-size: 1rem;
-        }
-    }
 }

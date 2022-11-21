@@ -6,18 +6,12 @@ export const newsApi = serverApi.injectEndpoints({
         fetchAllNews: build.query<INew[], string>({
             query: () => ({
                 url: '/all_news',
-                params: {
-                }
             }),
             providesTags: result => ['News']
         }),
-        fetchOneNews: build.query<INew[], number>({
+        fetchOneNews: build.query<INew, number>({
             query: (id) => ({
-                method: 'POST',
-                url: '/news',
-                body: {
-                    id
-                }
+                url: `/news?id=${id}`,  
             }),
             providesTags: result => ['News']
         }),
@@ -26,5 +20,6 @@ export const newsApi = serverApi.injectEndpoints({
 
 export const {
     useFetchAllNewsQuery,
-    useFetchOneNewsQuery
+    useFetchOneNewsQuery,
+    useLazyFetchOneNewsQuery
 } = newsApi;

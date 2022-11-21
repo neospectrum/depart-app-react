@@ -8,9 +8,6 @@ export const About = () => {
     return (
         <section className="about">
             <Container>
-                <div className="about__body">
-
-                </div>
             </Container>
         </section>
     );

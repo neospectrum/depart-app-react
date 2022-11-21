@@ -1,11 +1,15 @@
 @import '../../config/config.scss';
 
 .news {
-    width: 100%;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
     &__posts {
+        height: 100%;
         display: flex;
         flex-flow: column;
-        gap: 5rem;
+        justify-content: space-between;
+        gap: 20px;
     }
     &__posts .btn {
         align-self: flex-start;

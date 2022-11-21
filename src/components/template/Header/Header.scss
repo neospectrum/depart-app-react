@@ -9,8 +9,7 @@
     justify-content: center;
     padding: 5px 20px;
     gap: 10px;
-		&__image img{
-        }
+	line-height: 120%;
 		&__text {
             white-space: nowrap;
             display: grid;
@@ -19,11 +18,9 @@
         }
 		&__sub-title {
             font-size: 0.8rem;
-            line-height: 120%;
         }
 		&__title {        
             font-size: 1rem;
-            line-height: 120%;
         }
     @media (max-width: 767px) {
         & {
@@ -147,11 +144,11 @@
         }
 		&__list {
             width: 100%;
+            height: 100%;
 			display: flex;
             align-items: center;
             white-space: nowrap;
             justify-content: space-between;
-            height: 100%;
 			grid-auto-flow: column;
 		}
 		&__list li {

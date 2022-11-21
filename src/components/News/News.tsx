@@ -1,8 +1,7 @@
 import './News.scss';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import {  useFetchAllNewsQuery, useFetchOneNewsQuery } from '../../services/news';
-import axios from 'axios';
 import { PageTitle } from '../PageTitle/PageTitle';
 import { NewsItem } from '../NewsItem';
 import { Button } from '../Button/Button';
@@ -10,8 +9,6 @@ import { Error } from '../Error/Error';
 
 export const News = () => {
     const { data: news, error, isLoading } = useFetchAllNewsQuery('');
-    const { data: oneNew } = useFetchOneNewsQuery(0);
-    console.log(oneNew)
 
     return (
         <div className="news">

@@ -2,9 +2,9 @@ import './Header.scss';
 import React, { FC, useState } from 'react';
 
 import { MotionValue, motion, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 import { Container } from '../../containers/Container';
+import { CustomLink } from '../../CustomLink';
 
 interface HeaderProps {
     offsetY: Array<number>
@@ -29,7 +29,6 @@ export const Header: FC<HeaderProps> = ({ offsetY, scrollY }) => {
     const titleFontSize = useTransform(scrollY, offsetY, titleFontSizes);
 
     const scrollHandler = () => {
-        window.scrollTo(0, 320)
         setActive(prev => !prev)
     }
 
@@ -43,7 +42,7 @@ export const Header: FC<HeaderProps> = ({ offsetY, scrollY }) => {
         >
         <Container>
             <motion.div className="header__body" style={{ height }}>
-                <Link to={ '/' } className="logo">
+                <CustomLink to={ '/' } className="logo">
                     <div className="logo__image">
                         <motion.img src="https://kf.bmstu.ru/bmstu/img/logo.png" alt="" style={{ width }}/>
                     </div>
@@ -61,14 +60,14 @@ export const Header: FC<HeaderProps> = ({ offsetY, scrollY }) => {
                             кафедра ИУК2
                         </motion.div>
                     </div>
-                </Link>
+                </CustomLink>
                 <div className={ `header__menu menu ${active && 'active'}`}>
                     <div className="menu__body">
                     <ul className="menu__list">
-                        <li><Link to={ '/' } onClick={ scrollHandler } className="menu__link">Новости</Link></li>
-                        <li><Link to={ '/about' } onClick={ scrollHandler } className="menu__link">О нас</Link></li>
-                        <li><Link to={ '/courses' } onClick={ scrollHandler } className="menu__link">Студентам</Link></li>
-                        <li><Link to={ '/science' } onClick={ scrollHandler } className="menu__link">Наука</Link></li>
+                        <li><CustomLink to={ '/' } onClick={ scrollHandler } className="menu__link">Новости</CustomLink></li>
+                        <li><CustomLink to={ '/about' } onClick={ scrollHandler } className="menu__link">О нас</CustomLink></li>
+                        <li><CustomLink to={ '/courses' } onClick={ scrollHandler } className="menu__link">Студентам</CustomLink></li>
+                        <li><CustomLink to={ '/science' } onClick={ scrollHandler } className="menu__link">Наука</CustomLink></li>
                     </ul>
                     </div>
                 </div>

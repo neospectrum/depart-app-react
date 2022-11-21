@@ -1,0 +1,29 @@
+@import '../../config/config.scss';
+
+.latest-posts {
+    padding: 40px 0 0 0;
+    border-top: 3px solid rgba(116, 24, 48, 0.2);
+    & > :not(:last-child) {
+        margin: 0 0 40px 0;
+    }
+    &__title {}
+    &__list {
+        display: grid;
+        grid-template: repeat(auto-fit, minmax(276px, 1fr)) / repeat(auto-fit, minmax(130px, 276px));
+        justify-content: space-between;
+    }
+    &__item {
+    }
+    &__image {
+        max-width: 276px;
+        max-height: 276px;
+        height: 100%;
+    }
+    &__image img{
+        background-color: $primaryColor;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+

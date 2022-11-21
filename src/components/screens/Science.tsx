@@ -3,6 +3,7 @@ import React from 'react';
 import { Container } from '../containers/Container';
 import { PageTitle } from '../PageTitle/PageTitle';
 import { Article } from '../Article/Article';
+import { Button } from '../Button/Button';
 
 export const Science = () => {
     return (
@@ -14,6 +15,7 @@ export const Science = () => {
                     <Article/>
                     <Article/>
                     <Article/>
+                    <Button>Еще статьи</Button>
                 </div>
             </Container>
         </div>
