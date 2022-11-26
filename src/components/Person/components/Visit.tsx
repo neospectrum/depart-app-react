@@ -1,5 +1,6 @@
 import React from 'react';
-import { Title } from './Title/Title';
+import { Title } from '../../Title/Title';
+import './Visit.scss';
 
 export const Visit = () => {
     return (

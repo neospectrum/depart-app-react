@@ -2,13 +2,22 @@
 @import './styles/fonts.scss';
 @import './config/config.scss';
 @import './styles/swiper.scss';
+@import './styles/skeleton.scss';
 @import 'swiper/css';
 
 body {
     overflow-x: hidden;
     background: $bgColor;
-    color: $primaryColor;
+    color: $black;
     font-family: $fontMontserrat;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $black;
+    @media (max-width: 767px) {
+        & {
+            font-size: 1rem;
+        }
+    }
 }
 .wrapper {
     display: flex;
@@ -16,6 +25,18 @@ body {
     min-height: 100%;
     width: 100%;
     position: relative;
+}
+h1 {
+    color: $black;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 120%;
+}
+h2 {
+    color: $black;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 120%;
 }
 
 .container {
@@ -34,44 +55,8 @@ body {
     }
 }
 p {
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: $black;
-    line-height: 160%;
-    @media (max-width: 767px) {
-        & {
-            font-size: 1rem;
-        }
-    }
+
 }
 .main {
     padding: 65px 0;
-}
-
-.post {
-    max-width: 850px;
-    display: grid;
-    gap: 32px;
-    padding:  0 0 60px 0;
-    &__title {
-        display: grid;
-    }
-    &__date {
-        align-self:flex-end;
-        font-weight: 500;
-        line-height: 120%;
-        margin-bottom: 10px;
-    }
-    &__image {
-        max-height: 427px;
-        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-    }
-    &__image img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-    &__text {
-        line-height: 160%;
-    }
 }

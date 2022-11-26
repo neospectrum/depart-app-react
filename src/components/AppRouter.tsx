@@ -6,9 +6,7 @@ import { Route, Routes, Navigate, useLocation  } from 'react-router-dom';
 import { IRoute, publicRoutes } from '../routes/routes';
 
 export const AppRouter = () => {
-
     const location = useLocation();
-
     const buildRoutes = (routes: IRoute[]) => {
         return routes.map(route => {
             if (route.children) {

@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { IArticle } from '../../models/IArticle';
 
 import './Article.scss';
 
-export const Article = () => {
-    const photo = 'https://habrastorage.org/r/w1560/getpro/habr/upload_files/8a7/f2e/24a/8a7f2e24aa87cdb7c5b996053e64e7ed.png';
+interface ArticleProps {
+    article: IArticle;
+    isLoading: boolean
+};
+
+export const Article: FC<ArticleProps> = ({ article }) => {
+
     return (
         <div className="science__article article">
             <div className="article__content">
-                <div className="article__title">
-                    Личный опыт: какой уровень иностранного языка нужен для работы в IT в разных компаниях и странах
+                <div  className="article__title">
+                    <Link to={ article.link }>
+                        { article.title }
+                    </Link>
                 </div>
                 <div className="article__image">
-                    <img src={ photo } alt=""/>
+                    <img src={ article.full_img_url } alt=""/>
                 </div>
-                <div className="article__text">
-                    Владение иностранным языком — преимущество для кандидата даже при трудоустройстве в родной стране. Но для работы за рубежом требования отличаются. Мы попросили айтишников поделиться опытом, как оценивают уровень иностранного в международных компаниях и интернациональных коллективах. 
-                </div>
+                {/* <div className="article__text" dangerouslySetInnerHTML={{ __html: article.text }}/> */}
             </div>
         </div>
     );

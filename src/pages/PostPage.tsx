@@ -6,7 +6,7 @@ import { NewsPost } from '../components/screens/NewsPost';
 
 export const PostPage = () => {
     const match = useMatch({ path: '/posts/events/:id'});
-    console.log(match);
+
     return (
         <Main>
             { match ?

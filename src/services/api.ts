@@ -9,6 +9,6 @@ const baseQueryWithRetry = retry(baseQuery, { maxRetries: 6 })
 
 export const serverApi = createApi({
   baseQuery: baseQueryWithRetry,
-   tagTypes: ['News', 'Events'],
+   tagTypes: [ 'News', 'Events', 'Articles', 'Courses' ],
    endpoints: () => ({}),
 })

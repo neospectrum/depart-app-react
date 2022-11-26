@@ -24,5 +24,6 @@ export const eventsApi = serverApi.injectEndpoints({
 export const {
     useFetchAllEventsQuery,
     useFetchOneEventQuery,
+    useLazyFetchAllEventsQuery,
     useLazyFetchOneEventQuery
 } = eventsApi;

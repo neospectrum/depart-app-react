@@ -12,3 +12,15 @@ export const mainVariants = {
         transition: { ease: 'easeInOut'}
     }
 };
+
+export const loadNewsVariants = {
+    hidden: {
+        y: '-5vh',
+        opacity: 0
+    },
+    visible: {
+        y: 0,
+        x: 0,
+        opacity: 1
+    }
+}

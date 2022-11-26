@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import { Link } from 'react-router-dom';
+import { Navigate, NavLink, useLocation } from 'react-router-dom';
 
 interface CustomLinkProps { 
     to: string;
@@ -9,18 +9,26 @@ interface CustomLinkProps {
 }
 
 export const CustomLink: FC<CustomLinkProps> = ({ children, to, className, onClick }) => {
-
+    const location = useLocation();
+    const preventLocate = (e: MouseEvent) => {
+        if (location.pathname === to) {
+            e.preventDefault();
+            return;
+        } else {
+            scrollHandler();
+        }
+    };
 
     const scrollHandler = () => {
-        window.scrollTo(0, 320)
+        window.scrollTo(0, 420);
         if (onClick) {
             onClick();
         };
     };
 
     return (
-        <Link to={ to } className={ className } onClick={ scrollHandler }>
+        <NavLink to={ to } className={ className } onClick={ (e: any) => preventLocate(e) }>
             { children }
-        </Link>
+        </NavLink>
     )
 };

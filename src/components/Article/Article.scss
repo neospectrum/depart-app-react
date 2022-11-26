@@ -2,7 +2,6 @@
 
 .articles {
     display: grid;
-    justify-items: flex-end;
     gap: 56px;
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
 }
@@ -18,15 +17,26 @@
         &__content {
             display: flex;
             flex-flow: column;
+            height: 100%;
             gap: 13px;
         }
         &__title {
+            border-radius: 2px;
             font-size: 1.25rem;
             text-decoration-line: underline;
         }
+        &__title a {
+            color: $black;
+        }
+        &__title.skeleton {
+            background-color: black;
+            padding: 20px;
+        }
         &__image {
-            max-width: 461px;
+            border-radius: 3px;
+            overflow: hidden;
             max-height: 266px;
+            height: 100%;
         }
         &__image img{
             object-fit: cover;

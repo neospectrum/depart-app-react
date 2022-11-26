@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { INew } from '../models/INew';
-import { CustomLink } from './CustomLink';
+import { INew } from '../../models/INew';
+import { CustomLink } from '../CustomLink';
 
 interface NewsItemProps {
     newsItem: INew

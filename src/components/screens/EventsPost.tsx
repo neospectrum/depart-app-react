@@ -1,40 +1,33 @@
-import React, { useEffect } from 'react';
-
-import { useParams } from 'react-router';
-import { useLazyFetchOneEventQuery } from '../../services/events';
+import { Navigate, useParams } from 'react-router';
+import { IEvent } from '../../models/IEvent';
+import { useFetchAllEventsQuery, useFetchOneEventQuery } from '../../services/events';
 import { Container } from '../containers/Container';
+import { Error } from '../Error/Error';
 import { LatestPosts } from '../LatestPosts/LatestPosts';
+import { SkeletonLatestPosts } from '../LatestPosts/SkeletonLatestPosts';
 import { PageTitle } from '../PageTitle/PageTitle';
+import { Post } from '../Post/Post';
+import { SkeletonPost } from '../Post/SkeletonPost';
 
 export const EventPost = () => {
     const { id } = useParams();
 
-    const [ fetchEvent, { data: event }] = useLazyFetchOneEventQuery();
-
-    useEffect(() => {
-        fetchEvent(Number(id));
-    }, []);
+    const { data: events, isLoading, error: eventsError } = useFetchAllEventsQuery(1);
+    const { data: eventItem, isLoading: isEventLoading, error: eventItemError } = useFetchOneEventQuery(Number(id));
 
     return (
         <Container>
             <PageTitle></PageTitle>
-            { event &&
-                <div className='post'>
-                    <div className="post__title">
-                        <div className='title'>Заголовок мероприятия</div>
-                        <div className='post__date'>20 декабря-22 декабря 2022</div>
-                    </div>
-                    <div className="post__image">
-                        <img src={ event.full_img_url } alt="Изображение новости" />
-                    </div>
-                    <div className="post__text" >
-                        <p>
-                            Цифровизация невозможна без разработки и сопровождения информационных, в том числе информационно-вычислительных систем. Вы научитесь разрабатывать программное обеспечение, базы данных, веб-ресурсы, сетевые и мобильные приложения, аппаратные платформы информационных систем, что обеспечит Вам после освоения программы интересную профессиональную деятельность, достойную заработную плату и динамично развивающуюся карьеру.
-                        </p>                        
-                    </div>
-                </div>
+            { !isEventLoading && !eventItem && <Navigate to={ '/'} replace/>}
+            { isEventLoading && <SkeletonPost/> }
+            { eventItemError && <Error>Произошла ошибка при загрузке мероприятия</Error> }
+            { eventItem && <Post key={ eventItem.id } post={ eventItem }/> }
+
+            { isLoading && <SkeletonLatestPosts/> }   
+            { eventsError && <Error>Произошла ошибка при загрузке последних мероприятий</Error> }  
+            { events &&
+                <LatestPosts posts={ events.filter((event: IEvent) => event.id !== Number(id)) }/>
             }
-            <LatestPosts/>
         </Container>
     );
 };

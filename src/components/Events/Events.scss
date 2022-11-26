@@ -20,9 +20,11 @@
 }
 
 .event {
-    display: grid;
-    gap: 5px;
+    & > div {
+        margin: 0 0 5px 0;
+    }
     &__date {
+        color: $primaryColor;
         font-size: 1rem;
         white-space: nowrap;
         padding: 5px 0;
@@ -35,5 +37,8 @@
     }
     &__title:hover {
         text-decoration: underline;
+    }
+    &__title.skeleton {
+        padding: 20px;
     }
 }

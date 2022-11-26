@@ -3,7 +3,6 @@ import React, { FC, ReactNode } from 'react';
 import { useScroll } from 'framer-motion';
 
 import { Page } from './containers/Page';
-import { Footer } from './template/Footer/Footer';
 import { Header } from './template/Header/Header';
 
 interface LayoutProps {
@@ -13,7 +12,7 @@ interface LayoutProps {
 export const Layout: FC<LayoutProps> = ({ children }) => {
   const { scrollY } = useScroll();
 
-  const offsetY = [ 0, 310 ];
+  const offsetY = [ 0, 420 ];
 
   return (
       <>
@@ -21,7 +20,6 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
           <Page>
               { children }
           </Page>
-        <Footer/>
       </>
   );
 };

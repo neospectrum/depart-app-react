@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from '../containers/Container';
 import { PageTitle } from '../PageTitle/PageTitle';
 import { Person } from '../Person/Person';
-import { Visit } from '../Visit';
+import { Visit } from '../Person/components/Visit';
 
 export const Info = () => {
     return (

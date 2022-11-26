@@ -8,22 +8,36 @@
     }
     &__title {}
     &__list {
-        display: grid;
-        grid-template: repeat(auto-fit, minmax(276px, 1fr)) / repeat(auto-fit, minmax(130px, 276px));
-        justify-content: space-between;
     }
     &__item {
     }
-    &__image {
-        max-width: 276px;
-        max-height: 276px;
-        height: 100%;
-    }
-    &__image img{
-        background-color: $primaryColor;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    &__list.skelet {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 276px;
+        gap: 20px;
     }
 }
 
+.latest-post {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+    &__image img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    &__title a{
+        font-weight: 600;
+        font-size: 1rem;
+        color: $primaryColor;
+    }
+}

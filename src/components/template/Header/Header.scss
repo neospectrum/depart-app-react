@@ -18,6 +18,7 @@
         }
 		&__sub-title {
             font-size: 0.8rem;
+			line-height: 100%;
         }
 		&__title {        
             font-size: 1rem;
@@ -35,6 +36,7 @@
 	top: 0;
 	left: 0;
 	z-index: 100;
+	backdrop-filter: blur(2px);
 	&::before {
 		content: '';
 		width: 100%;
@@ -43,9 +45,6 @@
 		top: 0;
 		z-index: 2;
 		transition: all 0.3s ease 0s;
-        background-color: black;
-        background-color: $white;
-        box-shadow: 0 0 5px $primaryColor;
         border-top: 5px solid $primaryColor;
 	}
     &.scroll::before {
@@ -110,16 +109,19 @@
 			height: 100%;
 			width: 100%;
 			bottom: 0;
-			background-color: #1E1E1E;
 		}
         &__burger {
             display: block;
         }
+
 		&__burger span, &__burger::after, &__burger::before {
 			background-color: $primaryColor;
 		}
 		&__burger span {
 			right: 0;
+		}
+		&__burger.active::after, &__burger.active::before, &__burger.active span {
+			background-color: $bgColor;
 		}
 		&__burger::after, &__burger::before {
 			left: 0;
@@ -160,8 +162,9 @@
 			letter-spacing: 0.03em;
 			color: $primaryColor;
             font-weight: 600;
+			position: relative;
 		}
-        &__list li::before {
+        &__list &__link::before {
             content: '';
             position: absolute;
             bottom: -3px;
@@ -172,13 +175,16 @@
             background-color: $primaryColor;
             transition: all 0.5s ease 0s;
         }
+		&__link.active::before {
+			width: 100%;
+			opacity: 1;
+		}	
         &__list li:hover::before {
             width: 100%;
             opacity: 1;
         }
 	@media (max-width: 767px) { 
         &__body {
-            position: fixed;
             width: 100%;
             height: 100%;
             top: 0;
@@ -186,12 +192,13 @@
             right: 0;
             bottom: 0;
         }
-		&__list li::before {
+		&__list &__link::before {
             background-color: $white;
         }
 		&__list {
 			flex-flow: column;
 			gap: 30px;
+			padding-bottom: 100px;
 		}
 		&__link {
             color: $white;
@@ -202,7 +209,7 @@
             height: 100%;
             position: sticky;
             background-color: $primaryColor;
-            padding: 270px 0;
+            padding: 40% 0 80% 0;
 			box-shadow: 0 0 20px $primaryColor;
 		}
 	}
