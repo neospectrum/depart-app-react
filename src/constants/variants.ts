@@ -1,3 +1,41 @@
+export const appVariants = {
+    hidden: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 3.5
+      }
+    }
+  } 
+export const loaderVariants = {
+    hidden: {
+      opacity: 1
+    },
+    animate: {
+      opacity: 0,
+      transition: {
+        delay: 3
+      }
+    }
+ } 
+
+export  const footerVariants = {
+    hidden: {
+        y: '100vh',
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+        y: '0',
+        transition: { type: 'tween' }
+    },
+    exit: {
+        y: '100vh',
+    }
+};
+
 export const mainVariants = {
     hidden: {
         x: '100vw',

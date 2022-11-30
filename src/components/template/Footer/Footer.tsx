@@ -2,21 +2,7 @@ import './Footer.scss';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../../containers/Container';
-
-const footerVariants = {
-    hidden: {
-        y: '100vh',
-        opacity: 0,
-    },
-    visible: {
-        opacity: 1,
-        y: '0',
-        transition: { type: 'tween' }
-    },
-    exit: {
-        y: '100vh',
-    }
-};
+import { footerVariants } from '../../../constants/variants';
 
 export const Footer = () => {
     return (

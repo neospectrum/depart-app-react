@@ -5,6 +5,10 @@
 @import './styles/skeleton.scss';
 @import 'swiper/css';
 
+
+* {
+    scroll-behavior: smooth;
+}
 body {
     overflow-x: hidden;
     background: $bgColor;
@@ -29,10 +33,18 @@ body {
     width: 100%;
 }
 .wrapper-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $bgColor;
+    z-index: 1000;
 }
 h1 {
     color: $black;

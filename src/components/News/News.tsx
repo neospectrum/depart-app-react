@@ -16,7 +16,6 @@ export const News = () => {
     const [ numberOfPages, setNumberOfPages ] = useState<number>(0);
     const { data: fetchedNews, isLoading, error } = useFetchAllNewsQuery(currentPage);
     const skeletonNews = [ 1, 2, 3, 4, 5, 6 ];
-
     useEffect(() => {
         if (!fetchedNews) {
             return;

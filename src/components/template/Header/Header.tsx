@@ -29,7 +29,7 @@ export const Header: FC<HeaderProps> = ({ offsetY, scrollY }) => {
     const windowWidth = (window.innerWidth > 767);
 
     return (
-        <motion.div>
+        <>
             <motion.header
                 className="header"
                 initial={{ y: "-100%" }}
@@ -66,6 +66,6 @@ export const Header: FC<HeaderProps> = ({ offsetY, scrollY }) => {
                     </motion.div>
                 </Container>
             </motion.header>
-        </motion.div>
+        </>
     );
 };
