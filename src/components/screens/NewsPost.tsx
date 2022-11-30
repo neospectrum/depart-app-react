@@ -11,8 +11,7 @@ import { SkeletonPost } from '../Post/SkeletonPost';
 
 export const NewsPost = () => {
     const { id } = useParams();
-
-    const { data: news, isLoading: isNewsLoading, error: newsError } = useFetchAllNewsQuery(1);
+    const { data: news, isLoading: isNewsLoading, error: newsError } = useFetchAllNewsQuery(0);
     const { data: newsItem, isLoading: isNewsItemLoading, error: newsItemError } = useFetchOneNewsQuery(Number(id));
 
     return (
@@ -26,7 +25,7 @@ export const NewsPost = () => {
             { isNewsLoading && <SkeletonLatestPosts/> }     
             { newsError && <Error>Произошла ошибка при загрузке последних новостей</Error> }  
             { news &&
-                <LatestPosts posts={ news.filter((newsItem: INew) => newsItem.id !== Number(id)) }/>
+                <LatestPosts posts={ news.array.filter((newsItem: INew) => newsItem.id !== Number(id)) }/>
             }
         </Container>
     );

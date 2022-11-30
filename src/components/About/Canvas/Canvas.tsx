@@ -1,7 +1,7 @@
 import React, { RefObject, useEffect, useRef } from 'react';
 import { getDistance, contains } from '../../../utils/canvas-helpers';
-import { settings } from '../../../constants/canvas-settings';
 import { drawFrame } from '../../../utils/canvas-draw';
+import { settings } from '../../../constants/canvas-settings';
 import { IPoint } from '../../../models/IPoint';
 
 export const Canvas = () => {

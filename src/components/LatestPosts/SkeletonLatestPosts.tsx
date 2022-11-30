@@ -1,9 +1,9 @@
-import React from 'react';
 import './LatestPosts.scss';
-
+import React from 'react';
 
 export const SkeletonLatestPosts = () => {
     const posts = [ 1, 2, 3 ];
+    
     return (
         <div className="latest-posts">
             <div className="latest-posts__title title">

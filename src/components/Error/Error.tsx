@@ -1,9 +1,8 @@
+import './Error.scss';
 import React, { FC, ReactNode } from 'react';
 
-import './Error.scss';
-
 interface ErrorProps {
-    children: ReactNode
+    children: ReactNode;
 };
 
 export const Error: FC<ErrorProps> = ({ children }) => {

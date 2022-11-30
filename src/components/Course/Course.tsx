@@ -1,15 +1,16 @@
+import './Course.scss';
 import React, { FC } from 'react';
 import { IPlan } from '../../models/ICourse';
 import { Title } from '../Title/Title';
 
-import './Course.scss';
 
 interface CourseProps {
-    numberOfCourse: number
-    plans: IPlan[]
-}
+    numberOfCourse: number;
+    plans: IPlan[];
+};
 
 export const Course: FC<CourseProps> = ({ numberOfCourse, plans }) => {
+
     return (
         <div className="course">
             <div className="course__title">

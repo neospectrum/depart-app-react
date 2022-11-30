@@ -8,3 +8,8 @@ export interface IPlan {
     img_url: string;
     semester: number;
 }
+
+export interface ICourseObject {
+    number_pages: number;
+    array: ICourse[];
+}

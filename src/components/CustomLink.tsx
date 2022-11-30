@@ -1,12 +1,12 @@
 import React, { FC, ReactNode } from 'react'
-import { Navigate, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 interface CustomLinkProps { 
     to: string;
     children: ReactNode;
     className?: string;
-    onClick?: () => void
-}
+    onClick?: () => void;
+};
 
 export const CustomLink: FC<CustomLinkProps> = ({ children, to, className, onClick }) => {
     const location = useLocation();
@@ -30,5 +30,5 @@ export const CustomLink: FC<CustomLinkProps> = ({ children, to, className, onCli
         <NavLink to={ to } className={ className } onClick={ (e: any) => preventLocate(e) }>
             { children }
         </NavLink>
-    )
+    );
 };

@@ -7,3 +7,8 @@ export interface IArticle {
     text: string;
     title: string;
 };
+
+export interface IArticlesObject {
+    number_pages: number;
+    array: IArticle[];
+}

@@ -1,9 +1,10 @@
+import { INewsObject } from './../models/INew';
 import { serverApi } from './api';
 import { INew } from '../models/INew';
 
 export const newsApi = serverApi.injectEndpoints({
     endpoints: (build) => ({
-        fetchAllNews: build.query<INew[], number>({
+        fetchAllNews: build.query<INewsObject, number>({
             query: (page_number = 1) => ({
                 url: '/all_news',
                 params: {
@@ -24,6 +25,4 @@ export const newsApi = serverApi.injectEndpoints({
 export const {
     useFetchAllNewsQuery,
     useFetchOneNewsQuery,
-    useLazyFetchOneNewsQuery,
-    useLazyFetchAllNewsQuery
 } = newsApi;

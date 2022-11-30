@@ -1,4 +1,4 @@
-@import '../../config/config.scss';
+@import '../../styles/config/config.scss';
 
 .articles {
     display: grid;
@@ -7,6 +7,7 @@
 }
 
 .article {
+    display: flex   ;
     background-color: $white;
     box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: 0.1);
     max-width: 500px;
@@ -17,6 +18,7 @@
         &__content {
             display: flex;
             flex-flow: column;
+            width: 100%;
             height: 100%;
             gap: 13px;
         }
@@ -29,7 +31,6 @@
             color: $black;
         }
         &__title.skeleton {
-            background-color: black;
             padding: 20px;
         }
         &__image {
@@ -37,6 +38,9 @@
             overflow: hidden;
             max-height: 266px;
             height: 100%;
+        }
+        &__image.skeleton {
+            height: 266px;
         }
         &__image img{
             object-fit: cover;

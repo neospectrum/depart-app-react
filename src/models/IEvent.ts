@@ -9,3 +9,8 @@ export interface IEvent {
     text: string;
     title: string;
 };
+
+export interface IEventsObject {
+    number_pages: number;
+    array: IEvent[];
+}

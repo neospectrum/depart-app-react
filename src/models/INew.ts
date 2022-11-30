@@ -8,3 +8,8 @@ export interface INew {
     text: string;
     title: string;
 };
+
+export interface INewsObject {
+    number_pages: number;
+    array: INew[];
+}

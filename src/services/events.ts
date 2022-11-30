@@ -1,13 +1,13 @@
 import { serverApi } from './api';
-import { IEvent } from '../models/IEvent';
+import { IEvent, IEventsObject } from '../models/IEvent';
 
 export const eventsApi = serverApi.injectEndpoints({
     endpoints: (build) => ({
-        fetchAllEvents: build.query<IEvent[], number>({
+        fetchAllEvents: build.query<IEventsObject, number>({
             query: (page_number = 1) => ({
                 url: '/events',
                 params: {
-                    page_number: 1
+                    page_number: page_number
                 }
             }),
             providesTags: result => ['Events']
@@ -23,7 +23,5 @@ export const eventsApi = serverApi.injectEndpoints({
 
 export const {
     useFetchAllEventsQuery,
-    useFetchOneEventQuery,
-    useLazyFetchAllEventsQuery,
-    useLazyFetchOneEventQuery
+    useFetchOneEventQuery
 } = eventsApi;

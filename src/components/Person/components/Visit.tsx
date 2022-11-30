@@ -1,26 +1,27 @@
+import './Visit.scss';
 import React from 'react';
 import { Title } from '../../Title/Title';
-import './Visit.scss';
+import { useFetchAboutQuery } from '../../../services/about';
 
 export const Visit = () => {
+    const { data: about, isLoading } = useFetchAboutQuery(0);
+
     return (
         <div className="visit">
-            <div className="visit__title">
-                <Title>О нас</Title>
-            </div>
-            <div className="visit__text">
-                <div>
-                    <p>
-                    Цифровизация невозможна без разработки и сопровождения информационных, в том числе информационно-вычислительных систем. Вы научитесь разрабатывать программное обеспечение, базы данных, веб-ресурсы, сетевые и мобильные приложения, аппаратные платформы информационных систем, что обеспечит Вам после освоения программы интересную профессиональную деятельность, достойную заработную плату и динамично развивающуюся карьеру.                
-
-                    </p>
-                </div>
-                <div>
-                    <p>
-                    Выпускникам выдается диплом государственного образца МГТУ им. Н.Э. Баумана (г. Москва).Выпускники кафедры готовы к работе практически в любой сфере деятельности в области IT и не только. 
-                    </p>
-                </div>
-            </div>
+            { isLoading &&
+                <>
+                    <div className="visit__title skeleton"></div>
+                    <div className="visit__text skeleton"></div>
+                </>
+            }
+            { about && 
+                <>
+                    <div className="visit__title">
+                        <Title>{ about.title }</Title>
+                    </div>
+                    <div className="visit__text" dangerouslySetInnerHTML={{ __html: about.text }}></div>
+                </>
+            }
         </div>
     );
 };

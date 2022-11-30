@@ -4,8 +4,8 @@ import { formatDate } from '../../utils/formatDate';
 import { CustomLink } from '../CustomLink';
 
 interface EventsItemProps {
-    event: IEvent
-}
+    event: IEvent;
+};
 
 export const EventsItem: FC<EventsItemProps> = ({ event }) => {
 

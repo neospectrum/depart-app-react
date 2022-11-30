@@ -1,7 +1,8 @@
-import React from 'react';
 import './Course.scss';
+import React from 'react';
 
 export const SkeletonCourse = () => {
+
     return (
         <div className="course">
             <div className="course__title">

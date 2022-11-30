@@ -3,8 +3,8 @@ import { INew } from '../../models/INew';
 import { CustomLink } from '../CustomLink';
 
 interface NewsItemProps {
-    newsItem: INew
-}
+    newsItem: INew;
+};
 
 export const NewsItem: FC<NewsItemProps> = ({ newsItem }) => {
 

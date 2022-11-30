@@ -1,18 +1,19 @@
 import React from 'react';
 import { FreeMode, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { Container } from '../containers/Container';
 import { PageTitle } from '../PageTitle/PageTitle';
 import { Course } from '../Course/Course';
 import { useFetchAllCoursesQuery } from '../../services/courses';
 import { Error } from '../Error/Error';
 import { SkeletonCourse } from '../Course/SkeletonCourse';
+import { ICourse } from '../../models/ICourse';
 
 export const Courses = () => {
     const { data: courses, isLoading, error } = useFetchAllCoursesQuery(1);
-    
-    return (<div className="courses">
+
+    return (
+    <div className="courses">
         <Container>
             <PageTitle>Учебный план</PageTitle>
             <div className="courses__body">
@@ -30,7 +31,7 @@ export const Courses = () => {
                         freeMode={{ enabled: true, sticky: true, momentum: true }}
                     >
                         {
-                            courses.map((course) => {
+                            courses.array.map((course: ICourse) => {
                                 return <SwiperSlide key={ course.course_number }>
                                     <Course numberOfCourse={ course.course_number } plans={ course.plans }/> 
                                 </SwiperSlide>

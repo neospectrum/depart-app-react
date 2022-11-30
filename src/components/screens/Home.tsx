@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Container } from '../containers/Container';
 import { Events } from '../Events/Events';
 import { News } from '../News/News';

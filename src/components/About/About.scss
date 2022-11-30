@@ -1,23 +1,23 @@
-@import '../../config/config.scss';
+@import '../../styles/config/config.scss';
 
 .about {
-    min-height: 500px;
     position: relative;
     color: $black;
     &__body {
-        position: absolute;
-        z-index: 3;
+        bottom: -50px;
         width: 100%;
         height: 500px;
+        position: absolute;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     &__content {
-        height: 500%;
         display: grid;
         gap: 30px;
     }
     &__title {
+        z-index: 3;
         display: flex;
         gap: 11px;
         flex-wrap: wrap;
@@ -26,9 +26,4 @@
         font-weight: 600;
         line-height: 120%;
     }
-}
-
-.canvas {
-    position: absolute;
-    z-index: 2;
 }

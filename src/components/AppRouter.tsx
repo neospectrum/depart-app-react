@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { AnimatePresence } from 'framer-motion';
-
 import { Route, Routes, Navigate, useLocation  } from 'react-router-dom';
 import { IRoute, publicRoutes } from '../routes/routes';
 
@@ -27,8 +25,8 @@ export const AppRouter = () => {
                     element={<route.component />} 
                 />
             }
-        })
-    }
+        });
+    };
 
     return (
         <AnimatePresence exitBeforeEnter initial={ false }>

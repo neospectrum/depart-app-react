@@ -1,9 +1,9 @@
-import { ICourse } from './../models/ICourse';
+import { ICourseObject } from './../models/ICourse';
 import { serverApi } from './api';
 
 export const courseApi = serverApi.injectEndpoints({
     endpoints: (build) => ({
-        fetchAllCourses: build.query<ICourse[], number>({
+        fetchAllCourses: build.query<ICourseObject, number>({
             query: () => ({
                 url: '/plans',
             }),

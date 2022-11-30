@@ -10,7 +10,8 @@ export enum RouteNames {
     COURSES_ROUTE = '/courses',
     SCIENCE_ROUTE = '/science',
     NEW_ROUTE = '/posts/news/:id',
-    EVENT_ROUTE = '/posts/events/:id'
+    EVENT_ROUTE = '/posts/events/:id',
+    ARTICLE_ROUTE = '/posts/articles/:id'
 };
 
 export interface IRoute { 
@@ -26,4 +27,6 @@ export const publicRoutes: IRoute[] = [
     { path: RouteNames.SCIENCE_ROUTE, component: SciencePage },
     { path: RouteNames.EVENT_ROUTE, component: PostPage },
     { path: RouteNames.NEW_ROUTE, component: PostPage },
+    { path: RouteNames.ARTICLE_ROUTE, component: PostPage }
 ];
+

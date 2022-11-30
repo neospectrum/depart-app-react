@@ -1,7 +1,7 @@
-import {     motion, useWillChange } from 'framer-motion';
-import React from 'react';
-import { Container } from '../../containers/Container';
 import './Footer.scss';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Container } from '../../containers/Container';
 
 const footerVariants = {
     hidden: {
@@ -16,7 +16,7 @@ const footerVariants = {
     exit: {
         y: '100vh',
     }
-}
+};
 
 export const Footer = () => {
     return (
@@ -27,6 +27,9 @@ export const Footer = () => {
             exit={ 'exit' }
         >
             <Container>
+                <div className="footer__body">
+                    <div className="date">@2022</div>
+                </div>
             </Container>
         </motion.footer>
     );

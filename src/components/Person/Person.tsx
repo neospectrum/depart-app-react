@@ -1,10 +1,9 @@
+import './Person.scss';
 import React from 'react';
 import { Title } from '../Title/Title';
 
-import './Person.scss';
 
 export const Person = () => {
-    const photo = 'https://kf.bmstu.ru/uploads/chairs/ff3171247f7cf320b0e8259b902256b4.jfif';
     return (
         <div className="person">
             <div className="person__info">
@@ -22,7 +21,7 @@ export const Person = () => {
                 </p>
             </div>
             <div className="person__image">
-                <img src={ photo } alt=""/>
+                <img src={ 'http://185.87.50.137:8080/static/images/head_of_department.jpg' } alt=""/>
             </div>
         </div>
     );

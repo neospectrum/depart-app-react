@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const SkeletonNewsItem = () => {
-
     return (
         <div>
             <div className="new__image skeleton"></div>

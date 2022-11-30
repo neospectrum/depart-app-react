@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 
 interface ContainerProps {
-    children: ReactNode
+    children: ReactNode;
 };
 
 export const Container: FC<ContainerProps> = ({ children }) => {

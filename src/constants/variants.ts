@@ -13,6 +13,17 @@ export const mainVariants = {
     }
 };
 
+export const aboutVariants = {
+    hidden: {
+        y: '-5vh',
+        opacity: 0
+    },
+    visible: {
+        y: 0,
+        opacity: 1
+    }
+}
+
 export const loadNewsVariants = {
     hidden: {
         y: '-5vh',

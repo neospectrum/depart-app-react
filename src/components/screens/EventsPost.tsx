@@ -11,8 +11,7 @@ import { SkeletonPost } from '../Post/SkeletonPost';
 
 export const EventPost = () => {
     const { id } = useParams();
-
-    const { data: events, isLoading, error: eventsError } = useFetchAllEventsQuery(1);
+    const { data: events, isLoading, error: eventsError } = useFetchAllEventsQuery(0);
     const { data: eventItem, isLoading: isEventLoading, error: eventItemError } = useFetchOneEventQuery(Number(id));
 
     return (
@@ -26,7 +25,7 @@ export const EventPost = () => {
             { isLoading && <SkeletonLatestPosts/> }   
             { eventsError && <Error>Произошла ошибка при загрузке последних мероприятий</Error> }  
             { events &&
-                <LatestPosts posts={ events.filter((event: IEvent) => event.id !== Number(id)) }/>
+                <LatestPosts posts={ events.array.filter((event: IEvent) => event.id !== Number(id)) }/>
             }
         </Container>
     );

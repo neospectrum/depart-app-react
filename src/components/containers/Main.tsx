@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion';
 import React, { FC, ReactNode } from 'react';
-
+import { motion } from 'framer-motion';
 import { mainVariants } from '../../constants/variants';
 import { Footer } from '../template/Footer/Footer';
 
 interface MainProps {
-    children: ReactNode
+    children: ReactNode;
 };
 
 export const Main: FC<MainProps> = ({ children }) => {

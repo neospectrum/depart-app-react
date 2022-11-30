@@ -1,9 +1,9 @@
-import React, { FC, ReactNode } from 'react';
 import './Title.scss';
+import React, { FC, ReactNode } from 'react';
 
 interface TitleProps {
-    children: ReactNode
-}
+    children: ReactNode;
+};
 
 export const Title: FC<TitleProps> = ({ children }) => {
     return (
